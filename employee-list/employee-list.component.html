@@ -1,0 +1,40 @@
+<h2 align="center">Employee List </h2>
+<div *ngFor ="let employee of employees" class="input-group">
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control" />
+      <label class="form-label" for="form1">Search</label>
+    </div>
+    <button (click)= "Findbyid(employee.id)" class="btn btn-info" type="button" class="btn btn-primary">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email Id</th>
+            <!-- <th>Gender</th> -->
+            <th>JobTitle</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let employee of employees" >
+<td> {{employee.id}}</td>
+<td> {{employee.firstName}} {{employee.lastName}}</td>
+<td> {{employee.email}}</td>
+
+<td> {{employee.jobTitle}}</td>
+<td> {{employee.phone}}</td>
+<td>
+    <button (click)= "UpdateEmployee(employee.id)" class="btn btn-info">Update </button>
+    <button (click)= "DelEmpl(employee.id)" class="btn btn-info">Delete</button></td>
+        </tr>
+    </tbody>
+
+</table>
+
+
